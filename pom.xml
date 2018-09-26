@@ -19,7 +19,7 @@
         <ver.plugin.shade>3.1.0</ver.plugin.shade>
         <ver.plugin.checkstyle>3.0.0</ver.plugin.checkstyle>
         <ver.plugin.checkstyle.puppycrawl>8.7</ver.plugin.checkstyle.puppycrawl>
-        <ver.plugin.surefire>2.20.1</ver.plugin.surefire>
+        <ver.plugin.surefire>2.21.0</ver.plugin.surefire>
         <ver.plugin.skife>1.5.0</ver.plugin.skife>
         <ver.depend.slf4japi>1.8.0-beta0</ver.depend.slf4japi>
         <ver.depend.slf4jsimple>1.8.0-beta0</ver.depend.slf4jsimple>
@@ -39,8 +39,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${ver.plugin.compiler}</version>
                 <configuration>
-                    <source>1.9</source>
-                    <target>1.9</target>
+                    <source>11</source>
+                    <target>11</target>
                     <compilerArgs>
                         <arg>-Xlint:all,-options,-path</arg>
                     </compilerArgs>
@@ -70,6 +70,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
                             <finalName>${project.artifactId}-${project.version}</finalName>
                             <shadedClassifierName>executable</shadedClassifierName>
                             <transformers>
